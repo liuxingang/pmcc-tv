@@ -1,0 +1,46 @@
+<div class="video-player-wrapper">
+    <nav class="clear">
+        <div class="back">
+            <a href="javascript: history.go(-1);">
+                <img src="images/back@3x.png" alt="返回">
+            </a>
+        </div>
+        <div class="navTitle">
+            <span>新视界</span>
+        </div>
+        <div class="navSearch">
+            <a href="#/">
+                <img src="images/home.png" alt="首页">
+            </a>
+        </div>
+    </nav>
+    <!--videoplay-->
+    <div class="video-player">
+        <video width="100%" controls="controls" autoplay="autoplay">
+        </video>
+    </div>
+
+    <div class="video-title">
+        <p ng-bind="info.mediaName"></p>
+    </div>
+</div>
+
+
+<!--相关视频-->
+<div class="relate-video-wrapper">
+    <h3>相关视频</h3>
+    <div class="relate-video">
+        <ul>
+            <li ng-repeat="item in relateList">
+                <a class="a-change" href="" onclick="videoChange(this)" data-title={{item.mediaName}} data-url={{item.webvir}}>
+                    <img ng-src={{ip}}{{item.img}} alt="">
+                    <p ng-bind="item.mediaName"></p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+//    var videoHeigh = $(".video-player-wrapper").height();
+//    $(".relate-video-wrapper").css("margin-top",videoHeigh);
+</script>

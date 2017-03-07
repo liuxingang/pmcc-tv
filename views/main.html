@@ -1,0 +1,188 @@
+<nav class="clear news-list-navwrapper">
+    <div class="logo">
+        <img src="images/icon180.png" alt="平煤神马集团">
+    </div>
+    <div class="navTitle">
+        <span>中国平煤神马集团电视台</span>
+    </div>
+    <div class="navSearch">
+        <a href="#/">
+            <img src="images/home.png" alt="首页">
+        </a>
+    </div>
+</nav>
+<!--container-->
+<div class="main-container" style="margin-top: 42px;">
+    <div class="swiper-container" >
+        <div class="swiper-wrapper " ng-controller="swiperCtrl">
+            <div class="swiper-slide"  ng-repeat="item in dataList">
+                <!--<a href="{{ip}}{{item.url}}">-->
+                <a href="#/index/videoXsj:{{$index}}">
+                    <img ng-src={{ip}}{{item.imgUrl}} alt="">
+                    <p class="swiper-title">{{item.mediaName}}</p>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="pagination"></div>
+
+    </div>
+    <!--column-->
+    <div class="m-column">
+        <ul>
+            <li class="rb-border">
+                <a href="#/index/jtxw">
+                    <img src="images/cate_1@3x.png" alt="集团新闻">
+                    <p>集团新闻</p>
+                </a>
+
+            </li>
+            <li class="rb-border">
+                <a href="#/index/aqtd/aqbb">
+                    <img src="images/cate_2@3x.png" alt="安全天地">
+                    <p>安全天地</p>
+                </a>
+
+            </li>
+            <li class="rb-border">
+                <a href="#/index/dcrs">
+                    <img src="images/cate_3@3x.png" alt="多彩人生">
+                    <p>多彩人生</p>
+                </a>
+
+            </li>
+            <li class="b-border">
+                <a href="#/index/ztbd/xlzb">
+                    <img src="images/cate_4@3x.png" alt="专题报道">
+                    <p>专题报道</p>
+                </a>
+
+            </li>
+            <li class="r-border">
+                <a href="#/index/jczb">
+                    <img src="images/cate_5@3x.png" alt="基层直播">
+                    <p>基层直播</p>
+                </a>
+
+            </li>
+            <li class="r-border">
+                <a href="#/index/wytd/jchg">
+                    <img src="images/cate_6@3x.png" alt="文艺天地">
+                    <p>文艺天地</p>
+                </a>
+
+            </li>
+            <li class="r-border">
+                <a href="#/index/xxzs/qyfc">
+                    <img src="images/cate_7@3x.png" alt="形象展示">
+                    <p>形象展示</p>
+                </a>
+
+            </li>
+            <li>
+                <a href="#/index/more/tqyb">
+                    <img src="images/cate_8@3x.png" alt="更多">
+                    <p>更多</p>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+
+    <!--news-->
+    <div class="m-news" ng-controller="importantNewsCtrl">
+        <div class="m-news-title clear">
+            <h3>要闻</h3>
+            <a href="#/index/important/list" class="m-news-more">更多</a>
+        </div>
+        <div class="m-news-content">
+            <ul>
+                <li ng-repeat="item in indexData">
+                    <a href="#/index/important/videoXsj:{{$index}}">
+                        <div class="m-news-content-video">
+                            <img ng-src={{ip}}{{item.img}} alt="">
+                            <span class="time" ng-bind="item.mediaTime"></span>
+                        </div>
+                        <p class="m-news-content-title" ng-bind="item.mediaName"></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--pmcc news-->
+    <div class="m-news" ng-controller="pmccNewsCtrl">
+        <div class="m-news-title clear">
+            <h3>平煤神马新闻</h3>
+            <a href="#/index/pmccnews/list" class="m-news-more">更多</a>
+        </div>
+        <div class="m-news-content">
+            <div>
+                <a href="#/index/pmccnews/videoXsj:0">
+                    <div class="m-news-content-video">
+                        <img ng-src={{ip}}{{firstData.img}} alt="">
+                        <p class="m-news-content-title" ng-bind="firstData.mediaName"></p>
+                    </div>
+                </a>
+            </div>
+            <ul class="pmcc-news">
+                <li ng-repeat="item in indexData">
+                    <a href="#/index/pmccnews/videoXsj:{{$index+1}}" ng-bind="item.mediaName">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!--color life-->
+    <div class="m-news" ng-controller="colorLifeCtrl">
+        <div class="m-news-title clear">
+            <h3>多彩人生</h3>
+            <a href="#/index/colorlife/list" class="m-news-more">更多</a>
+        </div>
+        <div class="m-news-content">
+            <div>
+                <a href="#/index/colorlife/videoXsj:0">
+                    <div class="m-news-content-video">
+                        <img ng-src={{ip}}{{firstData.img}} alt="">
+                        <p class="m-news-content-title" ng-bind="firstData.mediaName"></p>
+                    </div>
+                </a>
+            </div>
+            <ul class="pmcc-news">
+                <li ng-repeat="item in indexData">
+                    <a href="#/index/colorlife/videoXsj:{{$index+1}}" ng-bind="item.mediaName">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!--weather-->
+    <div class="m-news" ng-controller="weatherCtrl">
+        <div class="m-news-title clear">
+            <h3>天气预报</h3>
+            <a href="#/index/weather/list" class="m-news-more">更多</a>
+        </div>
+        <div class="m-news-content">
+            <div>
+                <a href="#/index/weather/videoXsj:0">
+                    <div class="m-news-content-video">
+                        <img ng-src={{ip}}{{firstData.img}} alt="">
+                        <p class="m-news-content-title" ng-bind="firstData.mediaName"></p>
+                    </div>
+                </a>
+            </div>
+            <ul class="pmcc-news">
+                <li ng-repeat="item in indexData">
+                    <a href="#/index/weather/videoXsj:{{$index+1}}" ng-bind="item.mediaName">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

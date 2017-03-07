@@ -1,0 +1,82 @@
+<style>
+    /* Demo Styles */
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    .swiper-container {
+       width:100%;
+        height: 50px;
+        text-align: center;
+        margin-top:50px;
+    }
+    .swiper-slide {
+        width: 100%;
+        padding: 13px;
+        background: #fff;
+    }
+    .swiper-slide div{
+        border:thin solid #80A6D6;
+        border-radius: 4px;
+        padding: 4px;
+    }
+    .swiper-slide div a{
+        display: inline-block;
+    }
+</style>
+<nav class="clear news-list-navwrapper">
+    <div class="back">
+        <a href="javascript: history.go(-1);">
+            <img src="images/back@3x.png" alt="返回">
+        </a>
+    </div>
+    <div class="navTitle">
+        <span>基层直播</span>
+    </div>
+    <div class="navSearch">
+        <a href="#/">
+            <img src="images/home.png" alt="首页">
+        </a>
+    </div>
+</nav>
+
+<!--slide nav-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div style=" float:left; text-align:center">
+                <a href="#/index/jczb">基层直播</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="list-wrapper" style="margin-top: 0;">
+        <h3 ng-bind="dataList[0].categoryName"></h3>
+        <div class="relate-video">
+            <ul>
+                <li ng-repeat="item in dataList">
+                    <a class="a-change" href={{aUrl}}{{$index}}  data-title={{item.mediaName}} data-url={{item.webvir}}>
+                        <div class="m-news-content-video">
+                            <img ng-src={{ip}}{{item.img}} alt="">
+                            <span class="time" ng-bind="item.mediaTime"></span>
+                        </div>
+                        <p ng-bind="item.mediaName"></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        scrollContainer: true,
+        scrollbar: {
+            container: '.swiper-scrollbar'
+        }
+    })
+</script>
